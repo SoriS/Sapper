@@ -1,0 +1,14 @@
+.header {
+    height: 50px;
+    width: 400px;
+    border: 1px solid #222;
+    background-color:  #F5FFFF
+}
+
+.board {
+    height: 200px;
+    width: 400px;
+    border: 1px solid #222;
+    background-color:#b2b2b2;
+    
+}
