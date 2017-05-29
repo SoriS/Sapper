@@ -2,13 +2,18 @@
     height: 50px;
     width: 400px;
     border: 1px solid #222;
-    background-color:  #F5FFFF
+    background-color: #F5FFFF
 }
 
 .board {
     height: 200px;
     width: 400px;
     border: 1px solid #222;
-    background-color:#b2b2b2;
-    
+    background-color: #b2b2b2;
+}
+
+.cell {
+    height: 25px;
+    width: 25px;
+    background-color: rebeccapurple;
 }
