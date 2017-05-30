@@ -33,27 +33,34 @@ app.controller('SnapCont', ['$scope', function ($scope) {
 
     $scope.show = function (item) {
 
-        var Ran_i = Math.floor(Math.random() * $scope.fieldSize.height);
-        var Ran_j = Math.floor(Math.random() * $scope.fieldSize.width);
-        var NumMimeCell = Math.floor(($scope.fieldSize.height * $scope.fieldSize.width) / 7)
+
+
 
         item.click = true;
-        
-        for (var n = 0; n < item.posi+1; n++) {
-            var find_cell = $scope.Field[n].find( (e)=> {
+
+        for (var n = 0; n < item.posi + 1; n++) {
+            var find_cell = $scope.Field[n].find((e) => {
                 return e.posi == item.posi && e.posj == item.posj;
             });
         }
 
 
         console.log(find_cell)
+        var NumMimeCell = Math.floor(($scope.fieldSize.height * $scope.fieldSize.width) / 7)
+        
+        for (var p = 0; p < NumMimeCell; p++) {
+            var Ran_i = Math.floor(Math.random() * $scope.fieldSize.height);
+            var Ran_j = Math.floor(Math.random() * $scope.fieldSize.width);
 
-        for (p = 0; p < NumMimeCell; p++) {
+            var find_cell = $scope.Field[Ran_i].find((e) => {
+                return e.posi == Ran_i && e.posj == Ran_j;
+            });
+            debugger
+            this.item.mine =  !find_cell.mine
+            console.log(item)
 
         }
-
     }
-
     function Cell(cPosI, cPosJ, cMine, cClick, cCheck, cMineNum) {
         this.posi = cPosI;
         this.posj = cPosJ;

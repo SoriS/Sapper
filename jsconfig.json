@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "noImplicitUseStrict": false
+    },
+    "compileOnSave": true,
+    "typeAcquisition": {
+        "include": [
+            "angular"
+        ]
+    }
+}
