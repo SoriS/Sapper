@@ -29,12 +29,7 @@ app.controller('SnapCont', ['$scope', function ($scope) {
         console.log($scope.fieldSize.height, $scope.fieldSize.width)
 
     }
-
-
     $scope.show = function (item) {
-
-
-
 
         item.click = true;
 
@@ -43,7 +38,6 @@ app.controller('SnapCont', ['$scope', function ($scope) {
                 return e.posi == item.posi && e.posj == item.posj;
             });
         }
-
 
         console.log(find_cell)
         var NumMimeCell = Math.floor(($scope.fieldSize.height * $scope.fieldSize.width) / 7)
@@ -56,7 +50,8 @@ app.controller('SnapCont', ['$scope', function ($scope) {
                 return e.posi == Ran_i && e.posj == Ran_j;
             });
             debugger
-            this.item.mine =  !find_cell.mine
+            find_cell.mine = true;
+            item = find_cell;
             console.log(item)
 
         }
