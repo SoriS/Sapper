@@ -15,8 +15,7 @@
             <input type="submit" value="Start_Game">
         </form>
         <div class="text-center col-md-4 col-md-offset-4">
-            <div class="header">title
-
+            <div class="header" ng-style="{width: fieldSize.width*25+ 'px'}">title
 
             </div>
             <div class="board" ng-style="{height: fieldSize.height*25+ 'px', width: fieldSize.width*25+ 'px'}">game
@@ -28,7 +27,7 @@
 
                             <td ng-repeat="item in Cell_W track by $index">
 
-                                <div ng-click="show(item)" class="cell">
+                                <div ng-click="show(item)" class="cell_style">
 
                                 </div>
 
