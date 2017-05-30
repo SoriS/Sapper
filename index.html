@@ -2,7 +2,7 @@
 <html ng-app="AppModule">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -24,9 +24,15 @@
                 <table ng-model="cell" ng-if="game_start">
                     <tbody>
 
-                        <tr ng-repeat="Cell_W in $scope.Field">
+                        <tr ng-repeat="Cell_W in Field">
 
-                            <td ng-repeat="Cell_H in Cell_W track by $index">{{$index}}</td>
+                            <td ng-repeat="item in Cell_W track by $index">
+
+                                <div ng-click="show(item)" class="cell">
+
+                                </div>
+
+                            </td>
 
                         </tr>
                     </tbody>

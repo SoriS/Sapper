@@ -25,6 +25,9 @@ app.controller('SnapCont', ['$scope', function ($scope) {
         console.log($scope.Field);
         $scope.game_start = true;
     }
+    $scope.show = function (item) {
+        alert(' i: '+ item.i+' j: '+item.j)
+    }
     // cell = {
     //     pos: [$scope.formData.width, $scope.formData.height],
     //     mine: false,   //міна

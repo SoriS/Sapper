@@ -15,5 +15,9 @@
 .cell {
     height: 25px;
     width: 25px;
-    background-color: rebeccapurple;
+    background-color:#F0FFFF;
+    border-color:#DCDCDC;
+    border-style: ridge;
+    border-width: 2px;
+    
 }
