@@ -26,9 +26,15 @@
                         <tr ng-repeat="Cell_W in Field">
 
                             <td ng-repeat="item in Cell_W track by $index">
-
-                                <div ng-click="show(item)"  class="cell_style">
-
+<!--{'mine': item.mine == true && item.click == true}-->
+                                <div ng-click="clickByCell(item)" ng-class="item.mine && item.click
+                                ? 'mine' 
+                                :item.click 
+                                    ? 'click_cell'
+                                    :''" 
+                                    class=" cell_style" 
+                                    ng-bind="item.mineNum!=0?item.mineNum:''">
+                                    
                                 </div>
 
                             </td>
@@ -42,8 +48,8 @@
     </div>
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-<script src="app.js"></script>
-<script src="controller.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js "></script>
+<script src="app.js "></script>
+<script src="controller.js "></script>
 
 </html>

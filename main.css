@@ -15,9 +15,16 @@
 .cell_style {
     height: 25px;
     width: 25px;
-    background-color:#F0FFFF;
-    border-color:#DCDCDC;
+    background-color: #F0FFFF;
+    border-color: #DCDCDC;
     border-style: ridge;
     border-width: 2px;
-    
+}
+
+.mine {
+    background-color: red;
+}
+
+.click_cell {
+    background-color: beige;
 }
