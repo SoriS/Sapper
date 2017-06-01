@@ -41,11 +41,11 @@ app.controller('SnapCont', ['$scope', function ($scope) {
         if (Generate_Mine.count === 0)
         { Generate_Mine(item) }
 
-        Search_mine_num(item)
+        Search_mine_number(item)
 
     }
 
-    function Search_mine_num(item) {
+    function Search_mine_number(item) {
 
         var ic = item.posi;
         var jc = item.posj
@@ -82,6 +82,12 @@ app.controller('SnapCont', ['$scope', function ($scope) {
             };
         }
         console.log(thisArr);
+        for(var x in thisArr){
+            if(thisArr[x].mine ===true)
+            {item.mineNum++}
+            
+        console.log(thisArr[x],item.mineNum);
+        }
     }
 
     function Generate_Mine(item) {
