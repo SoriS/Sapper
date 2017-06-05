@@ -9,6 +9,8 @@ app.controller('SnapCont', ['$scope', 'generator', function ($scope, generator) 
         height: 0,
         width: 0,
     }
+    var adjacentArr = [];
+    var visitionArr = [];
     var T = new generator();
     console.log(T);
     $scope.Field = [];
@@ -61,12 +63,8 @@ app.controller('SnapCont', ['$scope', 'generator', function ($scope, generator) 
 
     //new algorithm
     function Search_mine(item) {
+        var s = 0
 
-        if (item.mine == true) {
-            return true;
-            //todo end game!!!
-        }
-        item.click = true;
         var currentI = item.posi;
         var currentJ = item.posj
         if (currentI >= $scope.fieldSize.width - 1) {////////////next I
@@ -98,19 +96,39 @@ app.controller('SnapCont', ['$scope', 'generator', function ($scope, generator) 
             // @ts-ignore
             var prevJ = currentJ - 1;
         }
+        var countMines = 0;
         for (var i = prevI; i <= nextI; i++) {
             for (var j = prevJ; j <= nextJ; j++) {
                 var cellLock = $scope.Field[i][j];
-                if (cellLock.mine == true) {
-                    item.mineNum++;
+                if ((i == currentI && j == currentJ)) {
+                    continue;
+                }
+                else if (cellLock.mine == true) {
+                    countMines++;
                     console.log("item", cellLock, cellLock.mineNum)
+                }
+                else if (cellLock.mine == false && cellLock.click === false && cellLock.mineNum == 0) {
+                    s++
+                    
+                    adjacentArr.push(cellLock)
                 }
             }
         }
+        item.click=true
+        item.mineNum = countMines;
+        if (item.mineNum > 0) {
+            for (i = 0; i < s; i++) {
+                adjacentArr.pop();
+            }
+            s = 0;
+            return;
+        }
 
+        while (adjacentArr.length) {
+            var item = adjacentArr.shift();
+            Search_mine(item)
+        }
     }
-
-
 
     //move into another file.
 

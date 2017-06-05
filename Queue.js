@@ -1,4 +1,4 @@
-
+angular.module('AppModule').factory('Queue',function(){
 //todo factory
 
 var queue = function () {
@@ -18,4 +18,9 @@ queue.prototype.delete = function (item) {
     //todo find item and remove from queue
 }
 
+
+
+
+
+})
 

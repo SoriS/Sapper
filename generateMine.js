@@ -21,7 +21,7 @@ angular.module('AppModule')
                     }
                 },
                 generateMines: function (item, fieldSize,Field) {
-                    var NumMimeCell = Math.floor((fieldSize.height * fieldSize.width) / 16)
+                    var NumMimeCell = Math.floor((fieldSize.height * fieldSize.width) / 6)
                     for (var p = 0; p < NumMimeCell; p++) {
                         var Ran_i = Math.floor(Math.random() * fieldSize.height);
                         var Ran_j = Math.floor(Math.random() * fieldSize.width);
