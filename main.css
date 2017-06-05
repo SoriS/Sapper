@@ -21,10 +21,25 @@
     border-width: 2px;
 }
 
+.click_cell {
+    background-color: yellow;
+}
+
 .mine {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("img/mine.png");
     background-color: red;
 }
 
-.click_cell {
-    background-color: yellow;
+.flag {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("img/flag.png");
+}
+
+.question {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("img/question.png");
 }

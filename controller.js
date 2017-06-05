@@ -9,6 +9,7 @@ app.controller('SnapCont', ['$scope', 'generator', function ($scope, generator) 
         height: 0,
         width: 0,
     }
+
     var adjacentArr = [];
     var visitionArr = [];
     var T = new generator();
@@ -33,6 +34,12 @@ app.controller('SnapCont', ['$scope', 'generator', function ($scope, generator) 
         $scope.game_start = true;
         console.log($scope.fieldSize.height, $scope.fieldSize.width)
 
+    }
+    oncontextmenu = function (eventData) {
+        event.preventDefault()
+        if (eventData.button === 2) {
+            $scope.showFon=true;
+        }
     }
 
     $scope.clickByCell = function (item) {
@@ -109,12 +116,12 @@ app.controller('SnapCont', ['$scope', 'generator', function ($scope, generator) 
                 }
                 else if (cellLock.mine == false && cellLock.click === false && cellLock.mineNum == 0) {
                     s++
-                    
+
                     adjacentArr.push(cellLock)
                 }
             }
         }
-        item.click=true
+        item.click = true
         item.mineNum = countMines;
         if (item.mineNum > 0) {
             for (i = 0; i < s; i++) {

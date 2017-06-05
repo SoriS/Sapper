@@ -31,7 +31,7 @@
                                 ? 'mine' 
                                 :item.click 
                                     ? 'click_cell'
-                                    :''" class=" cell_style" ng-bind="item.mineNum!=0?item.mineNum:''">
+                                    :''" class=" cell_style" ng-class="class" ng-bind="item.mineNum!=0?item.mineNum:''">
 
                                 </div>
 
@@ -50,5 +50,8 @@
 <script src="app.js "></script>
 <script src="generateMine.js "></script>
 <script src="controller.js "></script>
+<script src="img\mine.png"></script>
+<script src="img\flag.png"></script>
+<script src="img\question.png"></script>
 
 </html>
