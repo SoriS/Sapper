@@ -36,10 +36,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("img/flag.png");
+    background-size: 25px 20px;
+    z-index: 999999;
 }
 
 .question {
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("img/question.png");
+    z-index: 999999;
 }

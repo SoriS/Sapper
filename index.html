@@ -7,7 +7,11 @@
 </head>
 
 <body ng-controller="SnapCont">
-
+    <div class="row">
+        <div class="col-md-4">
+            <button ng-mousedown="testClick($event)"> click!!!</button>
+        </div>
+    </div>
     <div class="row vertical-center-row">
         <form class="col-md-4 col-md-offset-4" ng-submit="submit()">
             <input type="number" placeholder="Высота" ng-model="formData.height">
@@ -27,11 +31,11 @@
 
                             <td ng-repeat="item in Cell_W track by $index">
 
-                                <div ng-click="clickByCell(item)" ng-class="item.mine && item.click
+                                <div ng-right-click="Rclick($event,item)" ng-click="clickByCell(item)" ng-class="item.mine && item.click
                                 ? 'mine' 
                                 :item.click 
                                     ? 'click_cell'
-                                    :''" class=" cell_style" ng-class="class" ng-bind="item.mineNum!=0?item.mineNum:''">
+                                    :''" class=" cell_style" ng-bind="item.mineNum!=0?item.mineNum:''">
 
                                 </div>
 
@@ -50,6 +54,7 @@
 <script src="app.js "></script>
 <script src="generateMine.js "></script>
 <script src="controller.js "></script>
+<script src="directive.js "></script>
 <script src="img\mine.png"></script>
 <script src="img\flag.png"></script>
 <script src="img\question.png"></script>
